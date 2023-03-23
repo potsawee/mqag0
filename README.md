@@ -2,7 +2,42 @@ MQAG: Multiple-choice Question Answering and Generation for Assessing Informatio
 ============================================================
 Code for our paper [MQAG: Multiple-choice Question Answering and Generation for Assessing Information Consistency in Summarization](https://arxiv.org/abs/2301.12307)
 
+Python Package
+------------------------------------------------------------
+**\*Update (23/03/2023)**: MQAG implementation is added to [`selfcheckgpt`](https://pypi.org/project/selfcheckgpt/) package. To use MQAG in this package:
 
+```
+pip install selfcheckgpt
+```
+
+Example usage (full example in this [Jupyter notebook](https://github.com/potsawee/selfcheckgpt/blob/main/demo/MQAG_demo1.ipynb))
+
+```python
+from selfcheckgpt.modeling_mqag import MQAG
+mqag_model = MQAG()
+
+# Usage1: MQAG-score [Generation + Answering]
+# return dict consisting of various statistical distance, e.g. KL-div, Counting, Hellinger Distance, Total Variation
+score = mqag_model.score(candidate=summary, reference=document, num_questions=5, verbose=True)
+
+# Usage2: MQAG-generate (Multiple-chioce Question Generation)
+questions = mqag_model.generate(context=context, do_sample=True, num_questions=3)
+for i, question_item in enumerate(questions):
+    print("------------------------------------")
+    print(f"Q{i}: {question_item['question']}")
+    print(f"A: {question_item['options'][0]}")
+    print(f"B: {question_item['options'][1]}")
+    print(f"C: {question_item['options'][2]}")
+    print(f"D: {question_item['options'][3]}")
+    
+# Usage3: MQAG-answer (Multiple-chioce Question Answering)
+questions = [{'question': question, 'options': options}]
+probs = mqag_model.answer(questions=questions, context=context)
+print(probs[0])
+```
+
+MQAG (this repository)
+------------------------------------------------------------
 - Please read our paper for the information on MQAG
 - Model weights are available:
 	- HuggingFace:
