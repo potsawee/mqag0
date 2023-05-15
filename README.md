@@ -97,10 +97,18 @@ Experimental Results
 The pearson correlation coefficient (PCC) between the MQAG-score and human judgements are shown below.
 |   Method  | QAG-CNNDM | QAG-XSum | XSum-Faithful | XSum-Factual | Podcast | SummEval-Rel | SummEval-Cons |
 |:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|:-------:|
-| MQAG-Sum (KL-div) | 0.461 | 0.283  | 0.135 | 0.179 | 0.761 | 0.772 | 0.942 |
-| MQAG-Src (KL-div) | 0.144 | 0.097  | 0.087 | 0.054 | 0.320 | 0.559 | 0.599 |
+| MQAG-Src (KL-div) | 0.143 | 0.097  | 0.088 | 0.054 | 0.321 | 0.559 | 0.599 |
+| MQAG-Sum (KL-div) | 0.450 | 0.283  | 0.135 | 0.179 | 0.789 | 0.753 | 0.954 |
+| MQAG-Sum (TotalVar) | 0.462 | 0.309  | 0.221 | 0.244 | 0.770 | 0.796 | 0.933 |
+| MQAG-Sum (TotalVar + Answerability) | 0.502 | 0.313  | 0.306 | 0.270 | 0.855 | 0.814 | 0.945 |
 
-**\*Update (06/02/2023)**: We found that comparing two distributions using a *bounded* distance such as [total variation](https://en.wikipedia.org/wiki/Total_variation_distance_of_probability_measures) yields better results than KL-diveregence. Additional statistical distances will added to the MQAG repository soon.
+**\*Update**: 
+
+1. We found that comparing two distributions using a *bounded* distance such as [total variation](https://en.wikipedia.org/wiki/Total_variation_distance_of_probability_measures) yields better results than KL-diveregence.
+2. Using answerability measure to filter out bad questions improve performance.
+3. G1 trained on SQuAD is also available for MQAG. See our the model weights on HuggingFace https://huggingface.co/potsawee/t5-large-generation-squad-QuestionAnswer.
+
+Additional results and discussion about statistical distances, answerability, and other model variants will added in our revised paper.
 
 Training Multiple-choice QG and QA models
 ------------------------------------------------------------
