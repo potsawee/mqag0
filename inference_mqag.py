@@ -7,18 +7,18 @@ from transformers import LongformerTokenizer, LongformerForMultipleChoice
 from utils import prepare_qa_input, prepare_distractor_input, prepare_answering_input
 
 def inference(
-        source_path, # path to source (text) file
-        summary_path, # path to summary (text) file
-        mqag_variant, # mqag_src | mqag_sum
-        num_samples, # number of questions to be drawn
-        generation_model1_path, # path to Question+Answer Gen (t5-large)
-        generation_model2_path, # path to Distractor Gen (t5-large)
-        generation_model_type, # e.g. t5-large
-        answering_model_path, # path to Answering model (longformer)
-        answering_model_type, # e.g. longformer
-        use_gpu, # whether or not to use GPU (if available)
-        verbose, # whether or not to print information
-    ):
+    source_path, # path to source (text) file
+    summary_path, # path to summary (text) file
+    mqag_variant, # mqag_src | mqag_sum
+    num_samples, # number of questions to be drawn
+    generation_model1_path, # path to Question+Answer Gen (t5-large)
+    generation_model2_path, # path to Distractor Gen (t5-large)
+    generation_model_type, # e.g. t5-large
+    answering_model_path, # path to Answering model (longformer)
+    answering_model_type, # e.g. longformer
+    use_gpu, # whether or not to use GPU (if available)
+    verbose, # whether or not to print information
+):
 
     # ----- using GPU or CPU ----- #
     if use_gpu and torch.cuda.is_available():
