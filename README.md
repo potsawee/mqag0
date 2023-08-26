@@ -41,12 +41,13 @@ MQAG (this repository)
 - Please read our paper for the information on MQAG
 - Model weights are available:
 	- HuggingFace:
-		- ```generation_model_1```: https://huggingface.co/potsawee/t5-large-generation-race-QuestionAnswer
+		- ```generation_model_1``` (RACE): https://huggingface.co/potsawee/t5-large-generation-race-QuestionAnswer
+		- ```generation_model_1``` (SQuAD): https://huggingface.co/potsawee/t5-large-generation-squad-QuestionAnswer
 		- ```generation_model_2```: https://huggingface.co/potsawee/t5-large-generation-race-Distractor
 		- ```answering_model```: https://huggingface.co/potsawee/longformer-large-4096-answering-race
 
 	- Google Drive:
-		- ```generation_model_1```: [t5-large-generation-Race-QuestionAnswer](https://drive.google.com/file/d/1FSnwgqSFZ6wcVco78DO_aXj5D0b0LK1e/view?usp=share_link)
+		- ```generation_model_1``` (RACE): [t5-large-generation-Race-QuestionAnswer](https://drive.google.com/file/d/1FSnwgqSFZ6wcVco78DO_aXj5D0b0LK1e/view?usp=share_link)
 		- ```generation_model_2```: [t5-large-generation-Race-Distractor](https://drive.google.com/file/d/1zFcps700Vhjzt8m8jxhq6XRVQUVk95pw/view?usp=share_link)
 		- ```answering_model```: [longformer-large-4096-Race-Answering](https://drive.google.com/file/d/1bToo1l6zd934uLhsvLY5Am0dFaKDS-Ph/view?usp=share_link)
 - Requirements: We've tested on python 3.8 and other packages are shown in ```requirements.txt```
