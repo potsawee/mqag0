@@ -1,6 +1,7 @@
 MQAG: Multiple-choice Question Answering and Generation for Assessing Information Consistency
 ============================================================
-Code for our paper [MQAG: Multiple-choice Question Answering and Generation for Assessing Information Consistency in Summarization](https://arxiv.org/abs/2301.12307)
+- Code for our paper [MQAG: Multiple-choice Question Answering and Generation for Assessing Information Consistency in Summarization](https://arxiv.org/abs/2301.12307)
+- An updated version of this paper is accepted and to appear at [AACL 2023](http://www.ijcnlp-aacl2023.org/) 
 
 Python Package
 ------------------------------------------------------------
